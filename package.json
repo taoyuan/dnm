@@ -1,0 +1,63 @@
+{
+  "name": "dnm",
+  "version": "0.1.0",
+  "description": "dnm",
+  "license": "MIT",
+  "repository": "",
+  "author": "",
+  "keywords": [
+    "dns",
+    "dynamic",
+    "ddns",
+    "gandi"
+  ],
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "bin": {
+    "dnm": "./bin/dnm",
+    "dnu": "./bin/dnu"
+  },
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "npm run clean && echo Using TypeScript && tsc --version && tsc --pretty",
+    "test": "npm run build && mocha -r ts-node/register --recursive 'test/**/*.test.ts'"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bluebird": "^3.5.2",
+    "caporal": "^0.10.0",
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0",
+    "easy-table": "^1.1.1",
+    "ipify": "^2.0.0",
+    "isobject": "^3.0.1",
+    "js-yaml": "^3.12.0",
+    "json5": "^2.1.0",
+    "lodash": "^4.17.11",
+    "psl": "^1.1.29"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/bluebird": "^3.5.24",
+    "@types/chai": "^4.1.6",
+    "@types/debug": "0.0.31",
+    "@types/easy-table": "0.0.32",
+    "@types/js-yaml": "^3.11.2",
+    "@types/json5": "0.0.30",
+    "@types/lodash": "^4.14.117",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.11.6",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "rimraf": "^2.6.2",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}

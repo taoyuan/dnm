@@ -50,14 +50,14 @@ async function execute(args, opts, logger) {
     logger.debug('execute with provider:', args.provider);
     await executeWithProvider(args, opts, logger);
   } else {
-    return logger.error('no provider or config file provided');
+    throw new Error('no provider or config file provided');
   }
 }
 
 async function executeWithProvider(args, opts, logger) {
   const {provider, domains} = args;
   if (!domains || !domains.length) {
-    return logger.error('no domains provided')
+    throw new Error('no domains provided')
   }
 
   await Executor.execute(provider, 'updyn', domains, opts, logger);
@@ -67,7 +67,7 @@ async function executeWithConfig(args, opts, logger) {
   const {conf} = opts;
   const entries = load(conf);
   if (!_.isPlainObject(entries)) {
-    return logger.error(`config content in "${conf}" should be a plain object.`);
+    throw new Error(`config content in "${conf}" should be a plain object.`);
   }
   const providers = Object.keys(entries);
 

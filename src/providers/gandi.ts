@@ -150,8 +150,9 @@ export = class GandiProvider extends BaseProvider {
     }
 
     try {
-      const {data: answer} = await this.api.put(paths.join('/'), {items: [data]});
-      this.logger.debug('[gandi] ==> updated record:', data);
+      const url = paths.join('/');
+      const {data: answer} = await this.api.put(url, {items: [data]});
+      this.logger.debug(`[gandi] ==> updated record - ${url}`, data);
       return answer;
     } catch (e) {
       raiseRequestError(e);

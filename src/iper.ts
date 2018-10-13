@@ -1,4 +1,4 @@
-import ipify = require('ipify');
+import ipily = require('ipily');
 
 export class IPer {
   _ttl: number;
@@ -13,7 +13,7 @@ export class IPer {
     if (this._ip && (Date.now() - this._timestamp) < this._ttl) {
       return this._ip;
     }
-    this._ip = await ipify();
+    this._ip = await ipily();
     this._timestamp = Date.now();
     return this._ip;
   }

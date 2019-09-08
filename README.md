@@ -1,5 +1,7 @@
 # dnm
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/taoyuan/dnm.svg)](https://greenkeeper.io/)
+
 > Manipulate DNS records on various DNS providers(only `gandi` for now) in a standardized/agnostic way for nodejs.
 
 ## Installation
